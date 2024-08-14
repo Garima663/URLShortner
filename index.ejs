@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* color: whitesmoke; */
+      }
+      body{
+        background: #136a8a;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+      }
+      
+      .box{
+        /* border: 2px solid black; */
+        height: 400px;
+        width: 600px;
+        margin: auto;
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+      }
+      h1{
+        font-size: 60px;
+        align-self: center;
+        color: whitesmoke;
+      }
+      .putlink{
+          line-height: 50px;
+          width: 450px;
+          border-radius: 4px;
+          border: 2px solid white;
+          font-size: 25px;
+          padding: 2px;
+          color: black;
+
+      }
+      .btn{
+        line-height: 50px;
+        width: 140px;
+        border: 2px solid #123542;
+        border-radius: 4px;
+        margin-left: 4px;
+        padding: 2px;
+        font-size: 20px;
+        background-color: #123542;
+        color: whitesmoke;
+      }
+      .newid{
+        background-color: #123542;
+        color: whitesmoke;
+        padding: 5px;
+        font-size: 25px;
+        font-weight: 200;
+        height: 55px;
+        width: 600px;
+        }
+        .newid a{
+          color: whitesmoke;
+        }
+      
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <h1>URL Shortner</h1>
+    <div>
+        
+        <form method="POST" action="/url">
+            <input type="text" name="url" placeholder="Enter link here" class="putlink"/>
+            <button type="submit" class="btn">Shorten URL</button>
+        </form>
+    </div>
+    
+    <div class = "newid">
+        <% if (locals.id) { %>
+            <p>URL generated : <a href="http://localhost:8007/url/<%= id %>">http://localhost:8007/url/<%= id %></a> </p>
+       <% } %>
+    </div>
+   
+</div>
+    </div>
+    
+</body>
+</html>
